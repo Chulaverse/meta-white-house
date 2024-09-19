@@ -3,153 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kev's Kev - The Universe Designer</title>
+    <title>MetaWhiteHouse</title>
     <style>
+        /* Body Styling */
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #fff;
-        }
-        header {
+            background-image: url('path_to_your_image/A_futuristic_digital_hub_called_MetaWhiteHouse,_se.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
             text-align: center;
-            padding: 50px;
-            background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
         }
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-            color: #00ffcc;
+
+        /* Overlay to Darken Background */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Slightly darken the background */
+            z-index: -1;
         }
-        .tagline {
+
+        /* Main Section Styling */
+        .content {
+            padding: 100px 20px;
+        }
+
+        .content h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .content p {
             font-size: 1.5em;
-            color: #00ffaa;
-            margin-top: 10px;
+            margin-bottom: 50px;
         }
-        .hero-section {
+
+        /* Featured Projects Section */
+        .projects {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 500px;
-            background-color: #111;
-            position: relative;
-        }
-        .avatar {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: url('path-to-3D-avatar.png') no-repeat center center;
-            background-size: cover;
-            box-shadow: 0 0 50px rgba(0, 255, 255, 0.6);
-            animation: glow 2s infinite alternate;
-        }
-        @keyframes glow {
-            from {
-                box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-            }
-            to {
-                box-shadow: 0 0 80px rgba(0, 255, 255, 0.7);
-            }
-        }
-        .interactive-info {
-            position: absolute;
-            bottom: 20px;
-            text-align: center;
-        }
-        .interactive-info p {
-            font-size: 1.2em;
-            color: #00ffaa;
-        }
-        section {
-            padding: 50px;
-            background-color: #1a1a1a;
-        }
-        section h2 {
-            font-size: 2.5em;
-            text-align: center;
-            color: #00ffaa;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            margin-top: 30px;
+            flex-wrap: wrap;
         }
-        .grid-item {
-            background-color: #222;
+
+        .project-box {
+            background-color: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
-            text-align: center;
+            width: 300px;
         }
-        .grid-item h3 {
+
+        .project-box h3 {
             font-size: 1.5em;
-            color: #00ffcc;
+            margin-bottom: 10px;
         }
-        .grid-item p {
-            color: #aaa;
+
+        .project-box p {
+            font-size: 1em;
         }
-        footer {
+
+        /* Metahumans Section */
+        .metahumans {
+            margin-top: 50px;
+        }
+
+        .metahumans h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .metahuman-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .metahuman-box {
+            background-color: rgba(255, 255, 255, 0.1);
             padding: 20px;
-            text-align: center;
-            background-color: #0f0f0f;
+            border-radius: 10px;
+            width: 300px;
         }
-        footer p {
-            color: #fff;
+
+        .metahuman-box h3 {
+            font-size: 1.5em;
         }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Kev's Kev</h1>
-        <p class="tagline">Welcome to the Universe, Designed by Kev's Kev</p>
-    </header>
 
-    <div class="hero-section">
-        <div class="avatar"></div>
-        <div class="interactive-info">
-            <p>Hover over the avatar to reveal Kev's metahuman powers</p>
-        </div>
-    </div>
-
-    <section>
-        <h2>Metahuman Hub</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <h3>MetaArkane</h3>
-                <p>The mystical strategist.</p>
-            </div>
-            <div class="grid-item">
-                <h3>MetaHallyu</h3>
-                <p>The power of Korean influence.</p>
-            </div>
-            <div class="grid-item">
-                <h3>MetaRyūjin</h3>
-                <p>The spirit of Japan's resilience.</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Projects & Creations</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <h3>MetaWhiteHouse</h3>
-                <p>The heart of innovation and challenge.</p>
-            </div>
-            <div class="grid-item">
-                <h3>Siamtopia</h3>
-                <p>A utopian city designed by metahumans.</p>
-            </div>
-            <div class="grid-item">
-                <h3>Kevinverse Expansion</h3>
-                <p>Exploring new realms and dimensions.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2024 Kev's Kev - Designed by the Universe Interpreter</p>
-    </footer>
-</body>
-</html>
+        .metahuman-box p {
+            font-size
