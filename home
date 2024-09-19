@@ -1,164 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Siamtopia</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #1a1a1d;
-      color: white;
-    }
-
-    header {
-      background-color: #2b2b2e;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    .landing-page {
-      text-align: center;
-      padding: 50px;
-    }
-
-    .landing-page h1 {
-      font-size: 50px;
-      margin-bottom: 20px;
-      opacity: 0;
-    }
-
-    .map-container {
-      width: 100%;
-      height: 600px;
-      position: relative;
-    }
-
-    .map-placeholder {
-      width: 100%;
-      height: 100%;
-      color: white;
-      font-size: 50px;
-      text-align: center;
-      background-color: #111;
-      padding-top: 200px;
-    }
-
-    .metahuman-section {
-      padding: 50px;
-      background-color: #333;
-    }
-
-    .metahuman-gallery {
-      display: flex;
-      justify-content: space-around;
-    }
-
-    .metahuman-card {
-      background-color: #444;
-      padding: 20px;
-      border-radius: 10px;
-      width: 30%;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .metahuman-card:hover {
-      background-color: #555;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #2b2b2e;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kev's Kev - The Universe Designer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #00ffcc;
+        }
+        .tagline {
+            font-size: 1.5em;
+            color: #00ffaa;
+            margin-top: 10px;
+        }
+        .hero-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            background-color: #111;
+            position: relative;
+        }
+        .avatar {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: url('path-to-3D-avatar.png') no-repeat center center;
+            background-size: cover;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.6);
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+            }
+            to {
+                box-shadow: 0 0 80px rgba(0, 255, 255, 0.7);
+            }
+        }
+        .interactive-info {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+        }
+        .interactive-info p {
+            font-size: 1.2em;
+            color: #00ffaa;
+        }
+        section {
+            padding: 50px;
+            background-color: #1a1a1a;
+        }
+        section h2 {
+            font-size: 2.5em;
+            text-align: center;
+            color: #00ffaa;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .grid-item {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .grid-item h3 {
+            font-size: 1.5em;
+            color: #00ffcc;
+        }
+        .grid-item p {
+            color: #aaa;
+        }
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #0f0f0f;
+        }
+        footer p {
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header with Navigation -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#explore">Explore Siamtopia</a></li>
-        <li><a href="#metahumans">MetaHuman Profiles</a></li>
-        <li><a href="#events">Live Events</a></li>
-        <li><a href="#rappers-hub">Rappers' Hub</a></li>
-        <li><a href="#blockchain">Blockchain Projects</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <h1>Kev's Kev</h1>
+        <p class="tagline">Welcome to the Universe, Designed by Kev's Kev</p>
+    </header>
 
-  <!-- Landing Page with 3D Map Placeholder -->
-  <section class="landing-page">
-    <h1>Welcome to Siamtopia</h1>
-    <div class="map-container">
-      <div class="map-placeholder">3D Map Placeholder</div>
+    <div class="hero-section">
+        <div class="avatar"></div>
+        <div class="interactive-info">
+            <p>Hover over the avatar to reveal Kev's metahuman powers</p>
+        </div>
     </div>
-  </section>
 
-  <!-- MetaHuman Profiles Section -->
-  <section id="metahumans" class="metahuman-section">
-    <h2>Meet the MetaHumans</h2>
-    <div class="metahuman-gallery">
-      <div class="metahuman-card" data-name="MetaArkane">
-        <h3>MetaArkane</h3>
-        <p>Master of energy strands and creativity evolution.</p>
-      </div>
-      <div class="metahuman-card" data-name="MetaHallyu">
-        <h3>MetaHallyu</h3>
-        <p>Influencer of South Korea, guiding trends and culture.</p>
-      </div>
-      <div class="metahuman-card" data-name="MetaRyūjin">
-        <h3>MetaRyūjin</h3>
-        <p>Influencer from Japan, bridging ancient wisdom with future technology.</p>
-      </div>
-    </div>
-  </section>
+    <section>
+        <h2>Metahuman Hub</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3>MetaArkane</h3>
+                <p>The mystical strategist.</p>
+            </div>
+            <div class="grid-item">
+                <h3>MetaHallyu</h3>
+                <p>The power of Korean influence.</p>
+            </div>
+            <div class="grid-item">
+                <h3>MetaRyūjin</h3>
+                <p>The spirit of Japan's resilience.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Siamtopia. All rights reserved.</p>
-  </footer>
+    <section>
+        <h2>Projects & Creations</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3>MetaWhiteHouse</h3>
+                <p>The heart of innovation and challenge.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Siamtopia</h3>
+                <p>A utopian city designed by metahumans.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Kevinverse Expansion</h3>
+                <p>Exploring new realms and dimensions.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- JavaScript for Animations and Interactions -->
-  <script>
-    // Animate the landing page title
-    document.addEventListener("DOMContentLoaded", function() {
-      const title = document.querySelector("h1");
-      let opacity = 0;
-      const fadeIn = setInterval(() => {
-        opacity += 0.05;
-        title.style.opacity = opacity;
-        if (opacity >= 1) clearInterval(fadeIn);
-      }, 50);
-    });
-
-    // Placeholder interaction for MetaHuman profile cards
-    document.querySelectorAll('.metahuman-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const name = card.getAttribute('data-name');
-        alert(`Viewing details for ${name}`);
-      });
-    });
-  </script>
+    <footer>
+        <p>© 2024 Kev's Kev - Designed by the Universe Interpreter</p>
+    </footer>
 </body>
 </html>
