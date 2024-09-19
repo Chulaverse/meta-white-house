@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaKevin Universal Model</title>
+    <title>MetaKevin Universal Alignment</title>
     <style>
         body {
             margin: 0;
@@ -40,11 +39,11 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             background: radial-gradient(circle, #00ffff, #004d4d);
-            box-shadow: 0 0 30px #00ffcc, inset 0 0 20px #00cccc;
+            box-shadow: 0 0 50px #00ffcc, inset 0 0 30px #00cccc;
             animation: pulse 3s infinite ease-in-out;
         }
 
@@ -54,8 +53,8 @@
                 box-shadow: 0 0 30px #00ffcc, inset 0 0 20px #00cccc;
             }
             50% {
-                transform: translate(-50%, -50%) scale(1.1);
-                box-shadow: 0 0 50px #00ffcc, inset 0 0 40px #00cccc;
+                transform: translate(-50%, -50%) scale(1.2);
+                box-shadow: 0 0 70px #00ffcc, inset 0 0 50px #00cccc;
             }
             100% {
                 transform: translate(-50%, -50%) scale(1);
@@ -63,71 +62,90 @@
             }
         }
 
-        /* Metahumans as orbiting forces */
+        /* Glowing Metahumans */
         .metahuman {
             position: absolute;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             background: radial-gradient(circle, #ff00cc, #4d004d);
-            box-shadow: 0 0 20px #ff00cc, inset 0 0 10px #ff66ff;
-            animation: orbit 10s infinite linear;
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(255, 0, 204, 0.8), inset 0 0 20px rgba(255, 0, 204, 0.5);
+            animation: orbit 12s infinite linear;
         }
 
+        .metahuman img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            opacity: 0.9;
+        }
+
+        /* Orbiting motion for metahumans */
         .metahuman:nth-child(1) {
-            top: 20%;
+            top: 15%;
             left: 60%;
-            animation-duration: 12s;
             background: radial-gradient(circle, #ff6600, #662900);
+            box-shadow: 0 0 30px rgba(255, 102, 0, 0.8), inset 0 0 20px rgba(255, 102, 0, 0.5);
+            animation-duration: 12s;
         }
 
         .metahuman:nth-child(2) {
-            top: 70%;
-            left: 40%;
-            animation-duration: 15s;
+            top: 75%;
+            left: 30%;
             background: radial-gradient(circle, #00ff66, #004d1a);
+            box-shadow: 0 0 30px rgba(0, 255, 102, 0.8), inset 0 0 20px rgba(0, 255, 102, 0.5);
+            animation-duration: 15s;
         }
 
         .metahuman:nth-child(3) {
-            top: 40%;
+            top: 35%;
             left: 80%;
-            animation-duration: 18s;
             background: radial-gradient(circle, #6666ff, #1a1a66);
+            box-shadow: 0 0 30px rgba(102, 102, 255, 0.8), inset 0 0 20px rgba(102, 102, 255, 0.5);
+            animation-duration: 18s;
         }
 
         .metahuman:nth-child(4) {
             top: 85%;
             left: 70%;
-            animation-duration: 20s;
             background: radial-gradient(circle, #ffcc00, #4d3300);
+            box-shadow: 0 0 30px rgba(255, 204, 0, 0.8), inset 0 0 20px rgba(255, 204, 0, 0.5);
+            animation-duration: 20s;
         }
 
-        /* Orbiting motion for metahumans */
         @keyframes orbit {
             0% {
-                transform: translate(-50%, -50%) rotate(0deg) translateX(250px) rotate(0deg);
+                transform: translate(-50%, -50%) rotate(0deg) translateX(300px) rotate(0deg);
             }
             100% {
-                transform: translate(-50%, -50%) rotate(360deg) translateX(250px) rotate(-360deg);
+                transform: translate(-50%, -50%) rotate(360deg) translateX(300px) rotate(-360deg);
             }
         }
 
-        /* Connecting lines between MetaKevin and metahumans */
-        .connection-line {
+        /* Hover Interaction for Metahumans */
+        .metahuman:hover {
+            box-shadow: 0 0 50px rgba(255, 255, 255, 1), inset 0 0 30px rgba(255, 255, 255, 0.9);
+            transform: scale(1.1);
+            z-index: 10;
+        }
+
+        .metahuman:hover .popup {
+            display: block;
+        }
+
+        /* Tooltip popup on hover */
+        .popup {
+            display: none;
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.2);
-            height: 2px;
-            animation: moveLine 12s infinite linear;
-        }
-
-        /* Move lines in sync with orbits */
-        @keyframes moveLine {
-            0%, 100% {
-                width: 0;
-            }
-            50% {
-                width: 100px;
-            }
+            bottom: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1rem;
         }
 
         .interactive-info {
@@ -145,28 +163,33 @@
 <body>
 
     <header>
-        <h1>MetaKevin Universal Model</h1>
-        <p class="interactive-info">Feel the alignment of metahumans with MetaKevin's universal energy</p>
+        <h1>MetaKevin Universal Alignment</h1>
+        <p class="interactive-info">Hover over the Metahumans to reveal their cosmic powers</p>
     </header>
 
     <div class="universe-container">
         <!-- Central MetaKevin Core -->
         <div class="metakevin-core"></div>
 
-        <!-- Orbiting Metahumans -->
-        <div class="metahuman"></div>
-        <div class="metahuman"></div>
-        <div class="metahuman"></div>
-        <div class="metahuman"></div>
+        <!-- Glowing Orbiting Metahumans -->
+        <div class="metahuman">
+            <img src="images/metaarkane.jpg" alt="MetaArkane">
+            <div class="popup">MetaArkane: The mystical strategist with cosmic power.</div>
+        </div>
+        <div class="metahuman">
+            <img src="images/metahallyu.jpg" alt="MetaHallyu">
+            <div class="popup">MetaHallyu: Harnesses the power of Korean influence.</div>
+        </div>
+        <div class="metahuman">
+            <img src="images/metaryujin.jpg" alt="MetaRyūjin">
+            <div class="popup">MetaRyūjin: The spirit of Japan's resilience.</div>
+        </div>
+        <div class="metahuman">
+            <img src="images/metakalaya.jpg" alt="MetaKalaya">
+            <div class="popup">MetaKalaya: The guardian of creativity and knowledge.</div>
+        </div>
 
-        <!-- Placeholder for connections (dynamic updates via JS) -->
-        <!-- Could be dynamically adjusted via JavaScript or SVG -->
     </div>
-
-    <script>
-        // Dynamic line creation could be done here via JS connecting metahumans to MetaKevin
-        // Add event listeners or interactivity as required
-    </script>
 
 </body>
 </html>
