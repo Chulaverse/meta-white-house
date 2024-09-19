@@ -1,217 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The WhiteHouse - Kevinverse</title>
-    <style>
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siamtopia</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1d;
+      color: white;
+    }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #0e0e0e;
-            color: #f0f0f0;
-            line-height: 1.6;
-        }
+    header {
+      background-color: #2b2b2e;
+      padding: 20px;
+      text-align: center;
+    }
 
-        /* Hero Section */
-        .hero-section {
-            background: url('img/hero-background.jpg') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-        }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
 
-        .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
 
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-        }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
 
-        .cta-button {
-            padding: 10px 30px;
-            background-color: #3b82f6;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: background-color 0.3s ease;
-        }
+    .landing-page {
+      text-align: center;
+      padding: 50px;
+    }
 
-        .cta-button:hover {
-            background-color: #2563eb;
-        }
+    .landing-page h1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+      opacity: 0;
+    }
 
-        /* Projects Section */
-        .projects-section {
-            padding: 50px;
-            background-color: #121212;
-        }
+    .map-container {
+      width: 100%;
+      height: 600px;
+      position: relative;
+    }
 
-        .projects-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-        }
+    .map-placeholder {
+      width: 100%;
+      height: 100%;
+      color: white;
+      font-size: 50px;
+      text-align: center;
+      background-color: #111;
+      padding-top: 200px;
+    }
 
-        .projects-container {
-            display: flex;
-            justify-content: space-around;
-            text-align: center;
-        }
+    .metahuman-section {
+      padding: 50px;
+      background-color: #333;
+    }
 
-        .project {
-            background-color: #1f1f1f;
-            padding: 20px;
-            border-radius: 8px;
-            width: 30%;
-        }
+    .metahuman-gallery {
+      display: flex;
+      justify-content: space-around;
+    }
 
-        .project h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
+    .metahuman-card {
+      background-color: #444;
+      padding: 20px;
+      border-radius: 10px;
+      width: 30%;
+      text-align: center;
+      cursor: pointer;
+    }
 
-        .project p {
-            font-size: 1.2rem;
-        }
+    .metahuman-card:hover {
+      background-color: #555;
+    }
 
-        /* MetaHuman Section */
-        .metahuman-section {
-            padding: 50px;
-            background-color: #181818;
-        }
-
-        .metahuman-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-        }
-
-        .metahuman-profiles {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .metahuman {
-            text-align: center;
-            width: 30%;
-        }
-
-        .metahuman img {
-            width: 100%;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-
-        .metahuman h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .metahuman p {
-            font-size: 1.2rem;
-        }
-
-        /* Footer */
-        .footer {
-            padding: 20px;
-            text-align: center;
-            background-color: #1f1f1f;
-        }
-
-        .footer-content {
-            font-size: 1rem;
-        }
-
-        .footer-link {
-            color: #3b82f6;
-            text-decoration: none;
-            margin-top: 20px;
-            display: block;
-        }
-
-        .footer-link:hover {
-            text-decoration: underline;
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2b2b2e;
+    }
+  </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <header class="hero-section">
-        <div class="hero-content">
-            <h1>Welcome to The WhiteHouse</h1>
-            <p>Where Visionaries Shape the Future</p>
-            <a href="#projects" class="cta-button">Explore the Kevinverse</a>
-        </div>
-    </header>
+  <!-- Header with Navigation -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#explore">Explore Siamtopia</a></li>
+        <li><a href="#metahumans">MetaHuman Profiles</a></li>
+        <li><a href="#events">Live Events</a></li>
+        <li><a href="#rappers-hub">Rappers' Hub</a></li>
+        <li><a href="#blockchain">Blockchain Projects</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Featured Projects Section -->
-    <section id="projects" class="projects-section">
-        <h2>Featured Projects</h2>
-        <div class="projects-container">
-            <div class="project">
-                <h3>Kevin's Challenge</h3>
-                <p>Join the challenge to push the limits of your creativity and intuition.</p>
-            </div>
-            <div class="project">
-                <h3>Siamtopia</h3>
-                <p>Explore the city-building project inspired by futuristic visions.</p>
-            </div>
-            <div class="project">
-                <h3>MetaWhiteHouse</h3>
-                <p>The hub of innovation and governance in the Kevinverse.</p>
-            </div>
-        </div>
-    </section>
+  <!-- Landing Page with 3D Map Placeholder -->
+  <section class="landing-page">
+    <h1>Welcome to Siamtopia</h1>
+    <div class="map-container">
+      <div class="map-placeholder">3D Map Placeholder</div>
+    </div>
+  </section>
 
-    <!-- MetaHuman Spotlight -->
-    <section id="metahumans" class="metahuman-section">
-        <h2>Meet the MetaHumans</h2>
-        <div class="metahuman-profiles">
-            <div class="metahuman">
-                <img src="img/metahuman1.jpg" alt="MetaArkane">
-                <h3>MetaArkane</h3>
-                <p>The creator of imagination and intuitive reality.</p>
-            </div>
-            <div class="metahuman">
-                <img src="img/metahuman2.jpg" alt="MetaHallyu">
-                <h3>MetaHallyu</h3>
-                <p>The cultural architect of the Kevinverse.</p>
-            </div>
-            <div class="metahuman">
-                <img src="img/metahuman3.jpg" alt="MetaRyūjin">
-                <h3>MetaRyūjin</h3>
-                <p>Leading the future of Japan in the Kevinverse.</p>
-            </div>
-        </div>
-    </section>
+  <!-- MetaHuman Profiles Section -->
+  <section id="metahumans" class="metahuman-section">
+    <h2>Meet the MetaHumans</h2>
+    <div class="metahuman-gallery">
+      <div class="metahuman-card" data-name="MetaArkane">
+        <h3>MetaArkane</h3>
+        <p>Master of energy strands and creativity evolution.</p>
+      </div>
+      <div class="metahuman-card" data-name="MetaHallyu">
+        <h3>MetaHallyu</h3>
+        <p>Influencer of South Korea, guiding trends and culture.</p>
+      </div>
+      <div class="metahuman-card" data-name="MetaRyūjin">
+        <h3>MetaRyūjin</h3>
+        <p>Influencer from Japan, bridging ancient wisdom with future technology.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2024 The WhiteHouse - Kevinverse. All rights reserved.</p>
-            <a href="#contact" class="footer-link">Contact Us</a>
-        </div>
-    </footer>
-    
-    <script>
-        // Example JavaScript - Placeholder for further dynamic content
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('The WhiteHouse website is loaded!');
-        });
-    </script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Siamtopia. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Animations and Interactions -->
+  <script>
+    // Animate the landing page title
+    document.addEventListener("DOMContentLoaded", function() {
+      const title = document.querySelector("h1");
+      let opacity = 0;
+      const fadeIn = setInterval(() => {
+        opacity += 0.05;
+        title.style.opacity = opacity;
+        if (opacity >= 1) clearInterval(fadeIn);
+      }, 50);
+    });
+
+    // Placeholder interaction for MetaHuman profile cards
+    document.querySelectorAll('.metahuman-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const name = card.getAttribute('data-name');
+        alert(`Viewing details for ${name}`);
+      });
+    });
+  </script>
 </body>
 </html>
