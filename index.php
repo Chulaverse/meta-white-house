@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kevinverse - Completed with Tesseract Big Bangs</title>
+    <title>Metahuman Showcase with Branded Black Hole</title>
     <style>
         body {
             margin: 0;
@@ -14,32 +14,42 @@
             overflow: hidden;
         }
 
-        .container {
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-top: 20px;
+        }
+
+        .main-container {
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
+            perspective: 1500px;
         }
 
-        /* Central Core with shifting Metahuman images */
-        .core {
-            width: 200px;
-            height: 200px;
+        /* Black Hole with The White House Logo */
+        .black-hole {
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
-            background: url('/mnt/data/logo.jpg') no-repeat center center; /* Placeholder for the first Metahuman image */
+            background: url('/path-to-logo/white-house-logo.png') no-repeat center center;
             background-size: cover;
-            box-shadow: 0 0 30px white, 0 0 60px white, 0 0 100px white;
-            position: relative;
+            box-shadow: 0 0 50px black, 0 0 200px rgba(0,0,0,0.9), 0 0 300px rgba(0,0,0,0.5);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            animation: blackholePulse 10s infinite ease-in-out;
             z-index: 2;
-            animation: pulse 4s infinite;
         }
 
         /* Event Horizon effect */
         .event-horizon {
-            width: 400px;
-            height: 400px;
+            width: 600px;
+            height: 600px;
             border-radius: 50%;
             position: absolute;
             top: 50%;
@@ -51,36 +61,88 @@
             z-index: 1;
         }
 
-        /* Metahumans circulating around the core */
-        .metahuman {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background-size: cover;
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(0, 150, 255, 0.8);
-            animation: rotateAround 10s infinite linear;
+        .container {
+            display: flex;
+            gap: 20px;
+            z-index: 10; /* Ensuring Metahumans stay above the background */
+            position: relative;
         }
 
-        /* Positioning Metahumans in orbit */
-        .metahuman:nth-child(1) { top: -150px; left: 0px; }
-        .metahuman:nth-child(2) { top: 0px; left: -200px; }
-        .metahuman:nth-child(3) { top: 150px; left: 0px; }
-        .metahuman:nth-child(4) { top: 0px; left: 200px; }
+        /* Metahuman Frame with Personal Branding */
+        .metahuman-frame {
+            position: relative;
+            width: 250px;
+            height: 350px;
+            overflow: hidden;
+            background-color: #111;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
 
-        /* Tesseract Big Bang Neon Effect */
-        .tesseract {
+        .metahuman-frame:hover {
+            transform: scale(1.05);
+        }
+
+        .metahuman-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Metahuman personal brand logo overlay */
+        .personal-brand {
             position: absolute;
+            top: 10px;
+            right: 10px;
             width: 50px;
             height: 50px;
-            border: 2px solid white;
-            box-shadow: 0 0 30px white, 0 0 60px white;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15%;
-            opacity: 0;
-            animation: tesseractBigBang 10s infinite ease-in-out;
+            background-size: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
         }
 
+        .metahuman-details {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 51, 0.9);
+            color: white;
+            padding: 15px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            text-align: center;
+        }
+
+        .metahuman-frame:hover .metahuman-details {
+            opacity: 1;
+        }
+
+        .metahuman-details p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .register-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #00ccff;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .register-button:hover {
+            background-color: #0088cc;
+        }
+
+        /* Particle effect */
         canvas {
             position: absolute;
             top: 0;
@@ -88,9 +150,10 @@
             z-index: 0;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+        /* Keyframe Animations */
+        @keyframes blackholePulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
         }
 
         @keyframes eventPulse {
@@ -98,162 +161,146 @@
             50% { transform: scale(1.5); }
         }
 
-        @keyframes rotateAround {
-            from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-            to { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
-        }
-
-        @keyframes tesseractBigBang {
-            0% { transform: scale(0); opacity: 0; }
-            25% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.5); opacity: 0.5; }
-            100% { transform: scale(0); opacity: 0; }
-        }
-
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- The core represents the central image or Metahuman -->
-        <div class="core" id="core"></div> 
-        <!-- Event horizon effect around the core -->
-        <div class="event-horizon"></div> 
 
-        <!-- Metahumans orbiting the core -->
-        <div class="metahuman" style="background: url('/mnt/data/metahuman1.jpg') no-repeat center center;"></div>
-        <div class="metahuman" style="background: url('/mnt/data/metahuman2.jpg') no-repeat center center;"></div>
-        <div class="metahuman" style="background: url('/mnt/data/metahuman3.jpg') no-repeat center center;"></div>
-        <div class="metahuman" style="background: url('/mnt/data/metahuman4.jpg') no-repeat center center;"></div>
+    <h1>Metahuman Showcase with Black Hole Core</h1>
+    
+    <div class="main-container">
+        <!-- Black Hole at the Center with The White House Logo -->
+        <div class="black-hole"></div>
 
-        <!-- Tesseract Big Bang Neon Effects in the empty space -->
-        <div class="tesseract" style="top: 10%; left: 30%;"></div>
-        <div class="tesseract" style="top: 50%; left: 80%;"></div>
-        <div class="tesseract" style="top: 80%; left: 40%;"></div>
-        <div class="tesseract" style="top: 20%; left: 70%;"></div>
+        <!-- Event horizon for central core -->
+        <div class="event-horizon"></div>
+
+        <!-- Metahuman Showcase -->
+        <div class="container">
+            <!-- Metahuman 1 with personal brand -->
+            <div class="metahuman-frame">
+                <img src="/path-to-image/metahuman1.png" alt="Metahuman 1">
+                <div class="personal-brand" style="background-image: url('/path-to-brand-logo/metahuman1-brand.png');"></div>
+                <div class="metahuman-details">
+                    <h2>Metahuman 1</h2>
+                    <p>Skills: Teleportation, Energy Manipulation</p>
+                    <p>Metahuman 1 controls energy forces to shift between dimensions and manipulate objects at will.</p>
+                </div>
+            </div>
+
+            <!-- Metahuman 2 with personal brand -->
+            <div class="metahuman-frame">
+                <img src="/path-to-image/metahuman2.png" alt="Metahuman 2">
+                <div class="personal-brand" style="background-image: url('/path-to-brand-logo/metahuman2-brand.png');"></div>
+                <div class="metahuman-details">
+                    <h2>Metahuman 2</h2>
+                    <p>Skills: Mind Control, Telekinesis</p>
+                    <p>Metahuman 2 has powerful psychic abilities, able to influence minds and move objects effortlessly.</p>
+                </div>
+            </div>
+
+            <!-- Metahuman 3 with personal brand -->
+            <div class="metahuman-frame">
+                <img src="/path-to-image/metahuman3.png" alt="Metahuman 3">
+                <div class="personal-brand" style="background-image: url('/path-to-brand-logo/metahuman3-brand.png');"></div>
+                <div class="metahuman-details">
+                    <h2>Metahuman 3</h2>
+                    <p>Skills: Super Strength, Invulnerability</p>
+                    <p>Metahuman 3 possesses incredible strength and is virtually indestructible in battle.</p>
+                </div>
+            </div>
+
+            <!-- Metahuman 4 with personal brand -->
+            <div class="metahuman-frame">
+                <img src="/path-to-image/metahuman4.png" alt="Metahuman 4">
+                <div class="personal-brand" style="background-image: url('/path-to-brand-logo/metahuman4-brand.png');"></div>
+                <div class="metahuman-details">
+                    <h2>Metahuman 4</h2>
+                    <p>Skills: Flight, Speed</p>
+                    <p>Metahuman 4 can fly at supersonic speeds and evade any physical attack with ease.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Register Metahuman Button -->
+    <div style="text-align: center;">
+        <button class="register-button" onclick="registerMetahuman()">Register Metahuman</button>
+    </div>
+
+    <!-- Canvas for particle effect -->
     <canvas id="particleCanvas"></canvas>
 
     <script>
+        function registerMetahuman() {
+            alert("Register Metahuman feature coming soon!");
+        }
+
+        // Particle effect script
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
-
-        // Set canvas size
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
         const particlesArray = [];
-        const numberOfParticles = 5000;  // Adjust for performance
-        const maxRadius = Math.min(canvas.width, canvas.height) / 2 - 100;
-        const magneticPoints = [];
-        const numberOfMagneticPoints = 5;
+        const numberOfParticles = 10000;  // Millions of particles, adjust for performance
 
-        // Graviton Spectrum Colors with blue shades
-        const gravitonColors = [
-            'rgba(0, 0, 255, 0.7)', 'rgba(0, 150, 255, 0.7)', 'rgba(50, 50, 255, 0.7)', 
-            'rgba(100, 100, 255, 0.7)', 'rgba(150, 150, 255, 0.7)', 'rgba(200, 200, 255, 0.7)'
-        ];
-
+        // Particle class with random RGB color changes every .001 seconds
         class Particle {
             constructor() {
-                this.radius = Math.random() * maxRadius;
-                this.angle = Math.random() * Math.PI * 2;
-                this.speed = Math.random() * 0.02 + 0.001;
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
                 this.size = Math.random() * 2 + 1;
-                this.color = gravitonColors[Math.floor(Math.random() * gravitonColors.length)];
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 3 - 1.5;
+                this.color = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
             }
 
             update() {
-                this.angle += this.speed;
+                this.x += this.speedX;
+                this.y += this.speedY;
 
-                // Check if magnetic forces should apply
-                magneticPoints.forEach(point => {
-                    const dx = point.x - (canvas.width / 2 + this.radius * Math.cos(this.angle));
-                    const dy = point.y - (canvas.height / 2 + this.radius * Math.sin(this.angle));
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    const force = 100 / distance; // Magnetic force gets stronger as particles get closer
+                // Keep particles within canvas
+                if (this.x < 0 || this.x > canvas.width) this.speedX = -this.speedX;
+                if (this.y < 0 || this.y > canvas.height) this.speedY = -this.speedY;
 
-                    if (distance < 200) { // Attraction force
-                        this.radius -= force; // Move toward the point
-                    } else {
-                        this.radius += force; // Repel particles further out
-                    }
-                });
-
-                if (this.radius < maxRadius) {
-                    this.radius += 0.05; // Evolve outward
-                } else {
-                    this.radius = Math.random() * maxRadius; // Reset to inner orbit
-                }
+                // Update color frequently
+                this.color = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
             }
 
             draw() {
-                const x = canvas.width / 2 + this.radius * Math.cos(this.angle);
-                const y = canvas.height / 2 + this.radius * Math.sin(this.angle);
-
                 ctx.fillStyle = this.color;
                 ctx.beginPath();
-                ctx.arc(x, y, this.size, 0, Math.PI * 2);
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.closePath();
                 ctx.fill();
             }
         }
 
-        function init() {
+        function initParticles() {
             for (let i = 0; i < numberOfParticles; i++) {
                 particlesArray.push(new Particle());
             }
-
-            // Create magnetic points at random locations
-            for (let i = 0; i < numberOfMagneticPoints; i++) {
-                const point = {
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height
-                };
-                magneticPoints.push(point);
-            }
         }
 
-        function animate() {
+        function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // Update and draw particles
             particlesArray.forEach(particle => {
                 particle.update();
                 particle.draw();
             });
-
-            requestAnimationFrame(animate);
+            requestAnimationFrame(animateParticles);
         }
 
-        init();
-        animate();
+        initParticles();
+        animateParticles();
 
-        // Handle resizing of the canvas
+        // Adjust canvas on window resize
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            init();
+            initParticles();
         });
-
-        // Move magnetic points randomly every few seconds
-        setInterval(() => {
-            magneticPoints.forEach(point => {
-                point.x = Math.random() * canvas.width;
-                point.y = Math.random() * canvas.height;
-            });
-        }, 3000); // Adjust time interval as needed
-
-        // Cycle through metahuman images for the core (change core image periodically)
-        const coreElement = document.getElementById('core');
-        const metahumanImages = ['/mnt/data/metahuman1.jpg', '/mnt/data/metahuman2.jpg', '/mnt/data/metahuman3.jpg', '/mnt/data/metahuman4.jpg'];
-        let currentIndex = 0;
-
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % metahumanImages.length;
-            coreElement.style.backgroundImage = `url(${metahumanImages[currentIndex]})`;
-        }, 5000); // Change image every 5 seconds
-
     </script>
+
 </body>
 </html>
