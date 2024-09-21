@@ -3,114 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaWhiteHouse Animated</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>White House NaNa</title>
     <style>
         body {
             margin: 0;
-            overflow: hidden;
-            background: black;
-            font-family: 'Arial', sans-serif;
-        }
-
-        #metaWhiteHouse {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            background: url('/mnt/data/Screenshot 2567-09-21 at 11.30.01.png') no-repeat center center;
-            background-size: cover;
-        }
-
-        /* Animated particles with randomized positions and color transitions */
-        .particle {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            background-color: white;
-            border-radius: 50%;
-            animation: float 10s infinite ease-in-out, colorChange 3s infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            50% { transform(translate(50px, -50px)); }
-            100% { transform: translate(0, 0); }
-        }
-
-        @keyframes colorChange {
-            0% { background-color: red; }
-            33% { background-color: blue; }
-            66% { background-color: green; }
-            100% { background-color: yellow; }
-        }
-
-        /* Neon glow effect */
-        .neon-glow {
-            color: #0ff;
-            text-shadow: 0 0 20px rgba(0,255,255,0.6), 0 0 30px rgba(0,255,255,0.8);
-            font-size: 36px;
-            animation: glow 1.5s ease-in-out infinite alternate;
-            position: absolute;
-            bottom: 10%;
-            right: 10%;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 10px #0ff; }
-            to { text-shadow: 0 0 30px #0ff, 0 0 60px #0ff; }
-        }
-
-        /* Menu styling, positioned bottom-right */
-        .menu {
-            position: absolute;
-            bottom: 5%;
-            right: 5%;
-            color: white;
-            font-size: 18px;
-        }
-
-        .menu ul {
-            list-style: none;
             padding: 0;
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #0d1b2a;
+        }
+        header img {
+            width: 200px;
+            height: auto;
         }
 
-        .menu li {
-            margin: 10px 0;
+        /* Language Bar */
+        .language-bar {
+            display: flex;
+            justify-content: flex-end;
+            background-color: #1b263b;
+            padding: 10px 20px;
         }
 
-        .menu a {
-            color: white;
+        .language-bar a {
+            color: #e0e1dd;
             text-decoration: none;
-            transition: color 0.3s;
+            padding: 0 15px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
         }
 
-        .menu a:hover {
-            color: cyan;
+        .language-bar a:hover {
+            color: #ffffff;
+        }
+
+        section.hero {
+            background-image: url('path-to-your-white-house-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section.hero h1 {
+            font-size: 3em;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            color: #e0e1dd;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        section.content {
+            padding: 30px 20px;
+            background-color: #0d1b2a;
+            text-align: center;
+        }
+
+        section.content p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 20px auto;
+            color: #e0e1dd;
+        }
+
+        /* MetaRules Section */
+        section.metarules {
+            padding: 30px;
+            background-color: #1b263b;
+            color: #e0e1dd;
+            text-align: center;
+        }
+
+        section.metarules h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        section.metarules ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.2em;
+        }
+
+        section.metarules ul li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #0d1b2a;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* MetaStories Section */
+        section.metastories {
+            padding: 40px;
+            background-color: #0d1b2a;
+            text-align: center;
+        }
+
+        .meta-access-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .meta-access {
+            flex-basis: 22%;
+            background-color: #1b263b;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            color: #e0e1dd;
+            font-size: 1.1em;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease-in-out;
+        }
+
+        .meta-access:hover {
+            background-color: #1f3b66;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* MetaSpaces Section */
+        section.metaspaces {
+            padding: 40px;
+            background-color: #0d1b2a;
+            text-align: center;
+        }
+
+        section.metaspaces h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #e0e1dd;
+        }
+
+        .meta-images-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .meta-image {
+            flex-basis: 30%;
+            margin: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .meta-image:hover {
+            transform: scale(1.05);
+        }
+
+        .meta-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* MetaPeople and MetaHumans Section */
+        section.metapeople {
+            padding: 40px;
+            background-color: #1b263b;
+            text-align: center;
+            color: #fff;
+        }
+
+        .meta-people-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .meta-orb {
+            flex-basis: 20%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.7) 80%);
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            animation: randomGlow 10s infinite alternate;
+        }
+
+        .meta-orb:hover {
+            box-shadow: 0 0 60px 20px rgba(255, 255, 255, 0.6);
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        .meta-orb h3 {
+            color: #e0e1dd;
+            font-size: 1.2em;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Random Glow effect based on elements */
+        @keyframes randomGlow {
+            0% { box-shadow: 0 0 30px 10px rgba(255, 0, 0, 0.7); } /* Fire */
+            25% { box-shadow: 0 0 30px 10px rgba(0, 255, 0, 0.7); } /* Earth */
+            50% { box-shadow: 0 0 30px 10px rgba(0, 0, 255, 0.7); } /* Water */
+            75% { box-shadow: 0 0 30px 10px rgba(255, 255, 0, 0.7); } /* Air */
+            100% { box-shadow: 0 0 30px 10px rgba(255, 0, 255, 0.7); } /* Aether */
+        }
+
+        footer {
+            background-color: #0d1b2a;
+            padding: 10px;
+            text-align: center;
+            color: #c5c6c7;
+        }
+
+        footer p {
+            color: #c5c6c7;
+            font-size: 0.9em;
         }
 
     </style>
 </head>
 <body>
-    <div id="metaWhiteHouse">
-        <!-- Particles to simulate the moving background -->
-        <div class="particle" style="top: 20%; left: 30%;"></div>
-        <div class="particle" style="top: 50%; left: 60%;"></div>
-        <div class="particle" style="top: 70%; left: 40%;"></div>
 
-        <!-- Neon Glowing Title -->
-        <div class="neon-glow">
-            Welcome to MetaWhiteHouse
-        </div>
-
-        <!-- Menu at the bottom right -->
-        <div class="menu">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Metahumans</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
+    <!-- Language Bar Section -->
+    <div class="language-bar">
+        <a href="#">Kor</a>
+        <a href="#">Eng</a>
+        <a href="#">Jap</a>
+        <a href="#">Tha</a>
+        <a href="#">Chi</a>
+        <a href="#">Ind</a>
     </div>
+
+    <header>
+        <img src="path-to-your-logo.jpg" alt="White House NaNa Logo">
+    </header>
+
+    <section class="hero">
+        <h1>White House NaNa</h1>
+    </section>
+
+    <section class="content">
+        <p>The place where the MetaTales start, heard to be the place of the cosmic creation where The Aetheron resides.</p>
+        <p>A place where everything starts, a transcendental place where you can connect to your Metahuman and fight until you are the master of the multiverses.</p>
+    </section>
+
+    <!-- MetaRules Section -->
+    <section class="metarules">
+        <h2>MetaRules</h2>
+        <ul>
+            <li>No Substance Allowed</li>
+            <li>Student: 500 per night</li>
+            <li>Adult: 1,000 per night</li>
+            <li>Drink Responsibly</li>
+        </ul>
+    </section>
+
+    <!-- MetaStories Section -->
+    <section class="metastories">
+        <h2>MetaStories: Explore the Multiverse</h2>
+        <div class="meta-access-container">
+            <a href="link-to-kevinverse.html" class="meta-access">Access KevinVerse</a>
+            <div class="meta-access">Access ChulaVerse</div>
+            <div class="meta-access">Access Siamtopia</div>
+            <div class="meta-access">Access Metahumans</div>
+            <div class="meta-access">Access Meta Transcendence</div>
+            <div class="meta-access">Access MetaEdo</div>
+            <div class="meta-access">Access MetaJoson</div>
+            <div class="meta-access">Access MetaAyuddhaya</div>
+            <div class="meta-access">Access MetaNY</div>
+            <div class="meta-access">Access MetaArayan</div>
+        </div>
+    </section>
+
+    <!-- MetaPeople and MetaHumans Section -->
+    <section class="metapeople">
+        <h2>Talk to MetaPeople & MetaHumans</h2>
+        <div class="meta-people-container">
+            <!-- MetaPeople -->
+            <div class="meta-orb"><h3>MetaElon</h3></div>
+            <div class="meta-orb"><h3>MetaHawking</h3></div>
+            <div class="meta-orb"><h3>MetaBerners-Lee</h3></div>
+            <div class="meta-orb"><h3>MetaSteve</h3></div>
+            <div class="meta-orb"><h3>MetaEinstein</h3></div>
+            <div class="meta-orb"><h3>MetaTesla</h3></div>
+            <div class="meta-orb"><h3>MetaCurie</h3></div>
+            <div class="meta-orb"><h3>MetaDarwin</h3></div>
+            
+            <!-- MetaHumans -->
+            <div class="meta-orb"><h3>MetaKevin</h3></div>
+            <div class="meta-orb"><h3>MetaArkane</h3></div>
+            <div class="meta-orb"><h3>MetaJossawat</h3></div>
+            <div class="meta-orb"><h3>MetaAmma</h3></div>
+            <div class="meta-orb"><h3>MetaNacha</h3></div>
+            <div class="meta-orb"><h3>MetaLaoko</h3></div>
+            <div class="meta-orb"><h3>MetaSanthat</h3></div>
+            <div class="meta-orb"><h3>MetaWeena</h3></div>
+        </div>
+    </section>
+
+    <!-- MetaSpaces Section -->
+    <section class="metaspaces">
+        <h2>MetaSpaces</h2>
+        <div class="meta-images-container">
+            <div class="meta-image">
+                <img src="path-to-metawhitehouse-image1.jpg" alt="MetaWhiteHouse Image 1">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-metawhitehouse-image2.jpg" alt="MetaWhiteHouse Image 2">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-metawhitehouse-image3.jpg" alt="MetaWhiteHouse Image 3">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-metawhitehouse-image4.jpg" alt="MetaWhiteHouse Image 4">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-metawhitehouse-image5.jpg" alt="MetaWhiteHouse Image 5">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-metawhitehouse-image6.jpg" alt="MetaWhiteHouse Image 6">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-metawhitehouse-image7.jpg" alt="MetaWhiteHouse Image 7">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-metawhitehouse-image8.jpg" alt="MetaWhiteHouse Image 8">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-metawhitehouse-image9.jpg" alt="MetaWhiteHouse Image 9">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-metawhitehouse-image10.jpg" alt="MetaWhiteHouse Image 10">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 White House NaNa. All Rights Reserved. <br> Kavin Cherdchanyapong - MetaKevin - TheWhiteHouse NaNa - ENG THA KOR JPN CHI</p>
+    </footer>
+
 </body>
 </html>
