@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaWhiteHouse Animated</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+            font-family: 'Arial', sans-serif;
+        }
+
+        #metaWhiteHouse {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: url('/mnt/data/Screenshot 2567-09-21 at 11.30.01.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        /* Animated particles with randomized positions and color transitions */
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: white;
+            border-radius: 50%;
+            animation: float 10s infinite ease-in-out, colorChange 3s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform(translate(50px, -50px)); }
+            100% { transform: translate(0, 0); }
+        }
+
+        @keyframes colorChange {
+            0% { background-color: red; }
+            33% { background-color: blue; }
+            66% { background-color: green; }
+            100% { background-color: yellow; }
+        }
+
+        /* Neon glow effect */
+        .neon-glow {
+            color: #0ff;
+            text-shadow: 0 0 20px rgba(0,255,255,0.6), 0 0 30px rgba(0,255,255,0.8);
+            font-size: 36px;
+            animation: glow 1.5s ease-in-out infinite alternate;
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #0ff; }
+            to { text-shadow: 0 0 30px #0ff, 0 0 60px #0ff; }
+        }
+
+        /* Menu styling, positioned bottom-right */
+        .menu {
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            color: white;
+            font-size: 18px;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 10px 0;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: cyan;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="metaWhiteHouse">
+        <!-- Particles to simulate the moving background -->
+        <div class="particle" style="top: 20%; left: 30%;"></div>
+        <div class="particle" style="top: 50%; left: 60%;"></div>
+        <div class="particle" style="top: 70%; left: 40%;"></div>
+
+        <!-- Neon Glowing Title -->
+        <div class="neon-glow">
+            Welcome to MetaWhiteHouse
+        </div>
+
+        <!-- Menu at the bottom right -->
+        <div class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Metahumans</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
