@@ -34,7 +34,7 @@
         .language-bar a {
             color: #e0e1dd;
             text-decoration: none;
-            padding: 0 15px;
+            margin: 0 10px;
             font-size: 1.1em;
             transition: color 0.3s ease;
         }
@@ -43,6 +43,7 @@
             color: #ffffff;
         }
 
+        /* Hero Section */
         section.hero {
             background-image: url('path-to-your-white-house-image.jpg');
             background-size: cover;
@@ -51,18 +52,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            color: #e0e1dd;
+            text-align: center;
         }
         section.hero h1 {
             font-size: 3em;
             background: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 10px;
-            color: #e0e1dd;
-            font-weight: bold;
             letter-spacing: 1.5px;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
         }
 
+        /* Content Section */
         section.content {
             padding: 30px 20px;
             background-color: #0d1b2a;
@@ -80,8 +82,8 @@
         section.metarules {
             padding: 30px;
             background-color: #1b263b;
-            color: #e0e1dd;
             text-align: center;
+            color: #e0e1dd;
         }
 
         section.metarules h2 {
@@ -90,7 +92,7 @@
         }
 
         section.metarules ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
             font-size: 1.2em;
         }
@@ -113,26 +115,24 @@
         .meta-access-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
-            margin: 20px 0;
+            justify-content: center;
+            gap: 20px;
         }
 
         .meta-access {
-            flex-basis: 22%;
             background-color: #1b263b;
             padding: 15px;
-            margin: 10px;
             border-radius: 10px;
             color: #e0e1dd;
             font-size: 1.1em;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            transition: background 0.3s ease-in-out;
+            transition: background 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
         }
 
         .meta-access:hover {
             background-color: #1f3b66;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transform: scale(1.05);
         }
 
         /* MetaSpaces Section */
@@ -151,17 +151,16 @@
         .meta-images-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
-            margin: 20px 0;
+            justify-content: center;
+            gap: 15px;
         }
 
         .meta-image {
             flex-basis: 30%;
-            margin: 15px;
-            border-radius: 10px;
             overflow: hidden;
+            border-radius: 10px;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease;
         }
 
         .meta-image:hover {
@@ -172,6 +171,7 @@
             width: 100%;
             height: auto;
             display: block;
+            loading: lazy;
         }
 
         /* MetaPeople and MetaHumans Section */
@@ -185,12 +185,11 @@
         .meta-people-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
-            margin: 20px 0;
+            justify-content: center;
+            gap: 20px;
         }
 
         .meta-orb {
-            flex-basis: 20%;
             background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.7) 80%);
             border-radius: 50%;
             height: 150px;
@@ -201,15 +200,13 @@
             text-align: center;
             padding: 10px;
             box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease-in-out;
-            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             animation: randomGlow 10s infinite alternate;
         }
 
         .meta-orb:hover {
             box-shadow: 0 0 60px 20px rgba(255, 255, 255, 0.6);
             transform: scale(1.1);
-            cursor: pointer;
         }
 
         .meta-orb h3 {
@@ -227,6 +224,43 @@
             100% { box-shadow: 0 0 30px 10px rgba(255, 0, 255, 0.7); } /* Aether */
         }
 
+        /* World Map Section */
+        section.worldmap {
+            padding: 40px;
+            background-color: #0d1b2a;
+            text-align: center;
+            color: #e0e1dd;
+        }
+
+        section.worldmap h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .world-map {
+            width: 80%;
+            height: 100%;
+            background-image: url('path-to-your-3d-world-map-image.jpg');
+            background-size: cover;
+            background-position: center;
+            transform-style: preserve-3d;
+            transition: transform 1s ease;
+        }
+
+        .world-map:hover {
+            transform: rotateY(20deg) rotateX(10deg);
+        }
+
+        /* Footer */
         footer {
             background-color: #0d1b2a;
             padding: 10px;
@@ -235,8 +269,8 @@
         }
 
         footer p {
-            color: #c5c6c7;
             font-size: 0.9em;
+            color: #c5c6c7;
         }
 
     </style>
@@ -282,15 +316,10 @@
         <h2>MetaStories: Explore the Multiverse</h2>
         <div class="meta-access-container">
             <a href="link-to-kevinverse.html" class="meta-access">Access KevinVerse</a>
-            <div class="meta-access">Access ChulaVerse</div>
-            <div class="meta-access">Access Siamtopia</div>
-            <div class="meta-access">Access Metahumans</div>
-            <div class="meta-access">Access Meta Transcendence</div>
-            <div class="meta-access">Access MetaEdo</div>
-            <div class="meta-access">Access MetaJoson</div>
-            <div class="meta-access">Access MetaAyuddhaya</div>
-            <div class="meta-access">Access MetaNY</div>
-            <div class="meta-access">Access MetaArayan</div>
+            <a href="#" class="meta-access">Access ChulaVerse</a>
+            <a href="#" class="meta-access">Access Siamtopia</a>
+            <a href="#" class="meta-access">Access Metahumans</a>
+            <a href="#" class="meta-access">Access Meta Transcendence</a>
         </div>
     </section>
 
@@ -304,56 +333,89 @@
             <div class="meta-orb"><h3>MetaBerners-Lee</h3></div>
             <div class="meta-orb"><h3>MetaSteve</h3></div>
             <div class="meta-orb"><h3>MetaEinstein</h3></div>
-            <div class="meta-orb"><h3>MetaTesla</h3></div>
-            <div class="meta-orb"><h3>MetaCurie</h3></div>
-            <div class="meta-orb"><h3>MetaDarwin</h3></div>
-            
             <!-- MetaHumans -->
             <div class="meta-orb"><h3>MetaKevin</h3></div>
             <div class="meta-orb"><h3>MetaArkane</h3></div>
             <div class="meta-orb"><h3>MetaJossawat</h3></div>
             <div class="meta-orb"><h3>MetaAmma</h3></div>
-            <div class="meta-orb"><h3>MetaNacha</h3></div>
-            <div class="meta-orb"><h3>MetaLaoko</h3></div>
-            <div class="meta-orb"><h3>MetaSanthat</h3></div>
-            <div class="meta-orb"><h3>MetaWeena</h3></div>
         </div>
     </section>
 
     <!-- MetaSpaces Section -->
     <section class="metaspaces">
-        <h2>MetaSpaces</h2>
+        <h2>MetaSpaces: Inside White House & Surrounding Areas</h2>
         <div class="meta-images-container">
+            <!-- 10 Images Inside White House -->
             <div class="meta-image">
-                <img src="path-to-metawhitehouse-image1.jpg" alt="MetaWhiteHouse Image 1">
+                <img src="path-to-metawhitehouse-image1.jpg" alt="MetaWhiteHouse Inside 1">
             </div>
             <div class="meta-image">
-                <img src="path-to-metawhitehouse-image2.jpg" alt="MetaWhiteHouse Image 2">
+                <img src="path-to-metawhitehouse-image2.jpg" alt="MetaWhiteHouse Inside 2">
             </div>
             <div class="meta-image">
-                <img src="path-to-metawhitehouse-image3.jpg" alt="MetaWhiteHouse Image 3">
+                <img src="path-to-metawhitehouse-image3.jpg" alt="MetaWhiteHouse Inside 3">
             </div>
             <div class="meta-image">
-                <img src="path-to-metawhitehouse-image4.jpg" alt="MetaWhiteHouse Image 4">
+                <img src="path-to-metawhitehouse-image4.jpg" alt="MetaWhiteHouse Inside 4">
             </div>
             <div class="meta-image">
-                <img src="path-to-metawhitehouse-image5.jpg" alt="MetaWhiteHouse Image 5">
+                <img src="path-to-metawhitehouse-image5.jpg" alt="MetaWhiteHouse Inside 5">
             </div>
             <div class="meta-image">
-                <img src="path-to-metawhitehouse-image6.jpg" alt="MetaWhiteHouse Image 6">
+                <img src="path-to-metawhitehouse-image6.jpg" alt="MetaWhiteHouse Inside 6">
             </div>
             <div class="meta-image">
-                <img src="path-to-metawhitehouse-image7.jpg" alt="MetaWhiteHouse Image 7">
+                <img src="path-to-metawhitehouse-image7.jpg" alt="MetaWhiteHouse Inside 7">
             </div>
             <div class="meta-image">
-                <img src="path-to-metawhitehouse-image8.jpg" alt="MetaWhiteHouse Image 8">
+                <img src="path-to-metawhitehouse-image8.jpg" alt="MetaWhiteHouse Inside 8">
             </div>
             <div class="meta-image">
-                <img src="path-to-metawhitehouse-image9.jpg" alt="MetaWhiteHouse Image 9">
+                <img src="path-to-metawhitehouse-image9.jpg" alt="MetaWhiteHouse Inside 9">
             </div>
             <div class="meta-image">
-                <img src="path-to-metawhitehouse-image10.jpg" alt="MetaWhiteHouse Image 10">
+                <img src="path-to-metawhitehouse-image10.jpg" alt="MetaWhiteHouse Inside 10">
             </div>
+
+            <!-- 10 Images of Surrounding Area -->
+            <div class="meta-image">
+                <img src="path-to-surrounding-area-image1.jpg" alt="Surrounding Area 1">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-surrounding-area-image2.jpg" alt="Surrounding Area 2">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-surrounding-area-image3.jpg" alt="Surrounding Area 3">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-surrounding-area-image4.jpg" alt="Surrounding Area 4">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-surrounding-area-image5.jpg" alt="Surrounding Area 5">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-surrounding-area-image6.jpg" alt="Surrounding Area 6">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-surrounding-area-image7.jpg" alt="Surrounding Area 7">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-surrounding-area-image8.jpg" alt="Surrounding Area 8">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-surrounding-area-image9.jpg" alt="Surrounding Area 9">
+            </div>
+            <div class="meta-image">
+                <img src="path-to-surrounding-area-image10.jpg" alt="Surrounding Area 10">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D World Map Section -->
+    <section class="worldmap">
+        <h2>Explore the World</h2>
+        <div class="map-container">
+            <div class="world-map"></div>
         </div>
     </section>
 
